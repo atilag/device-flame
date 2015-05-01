@@ -3,6 +3,12 @@ include device/qcom/msm8610/BoardConfig.mk
 # Use default Gecko location if it's not provided in config files.
 GECKO_PATH ?= gecko
 
+TARGET_GCC_VERSION_EXP := 4.9
+
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=hard
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=hard
+
+
 TARGET_USES_TCT_FOTA := false
 TARGET_RECOVERY_FSTAB := device/t2m/flame/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
